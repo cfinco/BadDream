@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://WeaponStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "High Power Flashlight"
+description = "It's a flashlight! A blue one! \\nThat means it's better than other flashlights!"
+spd_mod = 45
+atk_mod = 5
+type_bonus = 25
+type = "Light"
+aoe = null
+recoil = null
+effect = null

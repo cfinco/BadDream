@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Big Teddy"
+description = "A life size teddy bear. It's just as dangerous as the real thing too!"
+monster_class = "Standard"
+weakness = "None"
+hp = 400
+atk = 10
+spd = 0
+effectChance = 0
+xpAward = 100
+mapSprite = "res://Sprites/Teddy_Map.png"
+battleSprite = "res://Sprites/Teddy_Battle.png"

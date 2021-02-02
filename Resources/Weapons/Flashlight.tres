@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://WeaponStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Flashlight"
+description = "An ordinary flashlight. Good for keeping the dark away. Monsters too."
+spd_mod = 30
+atk_mod = 10
+type_mult = 2
+type = "Light"
+aoe = false
+recoil = 0
+effect = "None"
+spritePath = "res://Sprites/Flashlight_Find.png"
+mapSpritePath = "res://Sprites/Flashlight_Map.png"

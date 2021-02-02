@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Phantasm"
+description = "Seeing things you know that ain't can certainly give you an awful fright!"
+monster_class = "Standard"
+weakness = "Dark"
+hp = 60
+atk = 10
+spd = 50
+effectChance = 50
+xpAward = 15
+mapSprite = "res://Sprites/Phant_Map.png"
+battleSprite = "res://Sprites/Phant_Battle.png"

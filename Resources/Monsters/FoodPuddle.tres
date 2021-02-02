@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Food Puddle"
+description = "Last night's dinner coming back to haunt you."
+monster_class = "Standard"
+weakness = "Fire"
+hp = 60
+atk = 10
+spd = 50
+effectChance = 75
+xpAward = 15
+mapSprite = "res://Sprites/Food_Map.png"
+battleSprite = "res://Sprites/Food_Battle.png"

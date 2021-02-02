@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://AntidoteStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Cup of Cough Syrup"
+description = "A cup of cough syrup. It tastes like battery acid and sadness."
+status = 1
+statusName = "poison"
+spritePath = "res://Sprites/Syrup_Find.png"
+mapSpritePath = "res://Sprites/Milk_Map.png"

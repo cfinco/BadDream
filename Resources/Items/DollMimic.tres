@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MimicStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Decoy Doll"
+description = "A... plush doll. Monsters can't tell it apart from a real person. You don't like the way it's looking at you..."
+monsterPath = "res://PsychoDoll.tscn"
+spritePath = "res://Sprites/Psycho_Find.png"
+mapSpritePath = "res://Sprites/Doll_Map.png"

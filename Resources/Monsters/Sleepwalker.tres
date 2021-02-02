@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Sleepwalker"
+description = "A restless member of the sleepwalking dead."
+monster_class = "Standard"
+weakness = "None"
+hp = 90
+atk = 10
+spd = 20
+effectChance = 0
+xpAward = 15
+mapSprite = "res://Sprites/Sleepwalker_Map.png"
+battleSprite = "res://Sprites/Sleepwalker_Battle.png"

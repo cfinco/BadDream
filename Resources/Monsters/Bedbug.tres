@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Bedbug"
+description = "A piece of furniture with far too many legs. It also bites."
+monster_class = "Standard"
+weakness = "Fire"
+hp = 175
+atk = 20
+spd = 80
+effectChance = 0
+xpAward = 200
+mapSprite = "res://Sprites/Bed_Map.png"
+battleSprite = "res://Sprites/Bug_Battle.png"

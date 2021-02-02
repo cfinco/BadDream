@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://PotionStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Glass of Dreams"
+description = "It's a glass of... dreams? It smells like milk and cookies."
+healAmount = 50
+spritePath = "res://Sprites/Dream_Find.png"
+mapSpritePath = "res://Sprites/Milk_Map.png"

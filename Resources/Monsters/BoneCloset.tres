@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Bone Closet"
+description = "Don't open. There's something dead inside."
+monster_class = "Parent"
+weakness = "Fire"
+hp = 250
+atk = 5
+spd = 0
+effectChance = 0
+xpAward = 50
+mapSprite = "res://Sprites/Closet_Map.png"
+battleSprite = "res://Sprites/Closet_Battle.png"

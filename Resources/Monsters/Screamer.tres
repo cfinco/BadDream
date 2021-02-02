@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Screamer"
+description = "A horrible creature creating horrible noises."
+monster_class = "Standard"
+weakness = "None"
+hp = 20
+atk = 5
+spd = 100
+effectChance = 0
+xpAward = 5
+mapSprite = "res://Sprites/Bat_Map.png"
+battleSprite = "res://Sprites/Bat_Battle.png"

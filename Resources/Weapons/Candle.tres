@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://WeaponStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Candle"
+description = "A small lit candle. Keeps monsters away while also setting the ambiance."
+spd_mod = 30
+atk_mod = 10
+type_mult = 2
+type = "Fire"
+aoe = false
+recoil = 0
+effect = "None"
+spritePath = "res://Sprites/Candle_Find.png"
+mapSpritePath = "res://Sprites/Candle_Map.png"

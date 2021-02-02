@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Psycho Doll"
+description = "The doll is aggresive!"
+monster_class = "Standard"
+weakness = "None"
+hp = 30
+atk = 50
+spd = 70
+effectChance = 0
+xpAward = 50
+mapSprite = "res://Sprites/Doll_Map.png"
+battleSprite = "res://Sprites/Psycho_Battle.png"

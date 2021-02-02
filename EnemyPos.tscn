@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://EnemyPos1.gd" type="Script" id=1]
+
+[node name="EnemyPos" type="Position2D"]
+position = Vector2( 1280, 448 )
+scale = Vector2( 0.3, 0.3 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="SelectorAnchor" type="Position2D" parent="."]
+position = Vector2( 0, -512 )

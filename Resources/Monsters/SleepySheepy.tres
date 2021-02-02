@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Sleepy Sheepy"
+description = "A well rested sheep emitting an aura of sleep."
+monster_class = "Standard"
+weakness = "Dark"
+hp = 100
+atk = 5
+spd = 30
+effectChance = 75
+xpAward = 30
+mapSprite = "res://Sprites/Sheep_Map.png"
+battleSprite = "res://Sprites/Sheep_Battle.png"

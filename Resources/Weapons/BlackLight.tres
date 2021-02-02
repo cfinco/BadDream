@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://WeaponStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Black Light"
+description = "An flashlight that emits mysterious colors unlike any seen on earth."
+spd_mod = 30
+atk_mod = 10
+type_mult = 2
+type = "Dark"
+aoe = false
+recoil = 0
+effect = "None"
+spritePath = "res://Sprites/Shadow_Find.png"
+mapSpritePath = "res://Sprites/Shadow_Map.png"

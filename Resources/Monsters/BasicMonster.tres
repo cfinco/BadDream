@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Monster"
+description = "A scary monster that was hiding under the bed."
+monster_class = "Standard"
+weakness = "None"
+hp = 40
+atk = 5
+spd = 30
+effectChance = 0
+xpAward = 5
+mapSprite = "res://Sprites/Monster_Map.png"
+battleSprite = "res://Sprites/Monster_Battle.png"

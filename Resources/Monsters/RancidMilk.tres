@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Rancid Milk"
+description = "A glass of milk gone far past its expiration date."
+monster_class = "Standard"
+weakness = "None"
+hp = 100
+atk = 10
+spd = 70
+effectChance = 80
+xpAward = 15
+mapSprite = "res://Sprites/Spoil_Map.png"
+battleSprite = "res://Sprites/Spoil_Battle.png"

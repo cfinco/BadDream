@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://PotionStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Glass of Warm Milk"
+description = "Warm milk, the primary ingredient in sweet dreams."
+healAmount = 25
+spritePath = "res://Sprites/Milk_Find.png"
+mapSpritePath = "res://Sprites/Milk_Map.png"
