@@ -13,6 +13,7 @@ onready var syrupPre = preload("res://Scenes/Items/Antidotes/CoughSyrup.tscn")
 onready var incensePre = preload("res://Scenes/Items/Antidotes/Incense.tscn")
 onready var coffeePre = preload("res://Scenes/Items/Antidotes/Coffee.tscn")
 onready var sheetPre = preload("res://Scenes/Items/Antidotes/DryerSheet.tscn")
+onready var bandagePre = preload("res://Scenes/Items/Antidotes/Bandage.tscn")
 
 onready var lightPre = preload("res://Scenes/Items/MapItems/NightLight.tscn")
 onready var dollPre = preload("res://Scenes/Items/BattleItems/DecoyDoll.tscn")
@@ -339,6 +340,8 @@ func generateItems():
 		items.append(coffeePre)
 	for i in range(5):
 		items.append(sheetPre)
+	for i in range(5):
+		items.append(bandagePre)
 	for i in range(4):
 		items.append(lightPre)
 	for i in range(10):

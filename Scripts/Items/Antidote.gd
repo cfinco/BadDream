@@ -19,6 +19,9 @@ func use(player):
 	player.status = Game.status.None
 	if self in player.inv.get_children():
 		player.inv.remove_child(self)
+	if player.temp_hp > 0:
+		player.heal(player.temp_hp)
+		player.temp_hp = 0
 	return null
 
 func discover():
