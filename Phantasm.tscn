@@ -1,9 +1,0 @@
-[gd_scene load_steps=4 format=2]
-
-[ext_resource path="res://Resources/Monsters/Phantasm.tres" type="Resource" id=1]
-[ext_resource path="res://Monster.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Resources/Effects/Confusion.tres" type="Resource" id=3]
-
-[node name="Phantasm" instance=ExtResource( 2 )]
-effect = ExtResource( 3 )
-stats = ExtResource( 1 )

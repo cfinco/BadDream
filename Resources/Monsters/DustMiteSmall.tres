@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Dust Mite"
+description = "A mini sized creepy crawly that lurks in the house."
+monster_class = "Standard"
+weakness = "Fire"
+hp = 50
+atk = 5
+spd = 80
+effectChance = 0
+xpAward = 15
+mapSprite = "res://Sprites/Dust_Map.png"
+battleSprite = "res://Sprites/Dust_Battle.png"

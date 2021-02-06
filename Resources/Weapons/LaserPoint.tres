@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/WeaponStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Laser Pointer"
+description = "A specialized tool for precision monster laser strikes."
+spd_mod = 30
+atk_mod = 5
+type_mult = 4
+type = "Dark"
+aoe = false
+recoil = 0
+effect = ""
+spritePath = "res://Sprites/Laser_Find.png"
+mapSpritePath = "res://Sprites/Laser_Map.png"

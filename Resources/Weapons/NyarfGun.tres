@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/WeaponStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Nyarf Gun"
+description = "A cool toy gun that fires foam bullets."
+spd_mod = 0
+atk_mod = 5
+type_mult = 1
+type = "None"
+aoe = false
+recoil = 0
+effect = ""
+spritePath = "res://Sprites/Gun_Find.png"
+mapSpritePath = "res://Sprites/Gun_Map.png"

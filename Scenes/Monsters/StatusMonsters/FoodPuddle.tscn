@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Monsters/FoodPuddle.tres" type="Resource" id=2]
+[ext_resource path="res://Resources/Effects/Poison.tres" type="Resource" id=3]
+[ext_resource path="res://Sprites/Food_Battle.png" type="Texture" id=4]
+
+[node name="FoodPuddle" instance=ExtResource( 1 )]
+effect = ExtResource( 3 )
+stats = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 4 )

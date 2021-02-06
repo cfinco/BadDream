@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://MonsterStats.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Resources/MonsterStats.gd" type="Script" id=1]
 
 [resource]
 script = ExtResource( 1 )
@@ -10,7 +10,7 @@ monster_class = "Standard"
 weakness = "Light"
 hp = 100
 atk = 15
-spd = 45
+spd = 15
 effectChance = 100
 xpAward = 20
 mapSprite = "res://Sprites/Dark_Map.png"

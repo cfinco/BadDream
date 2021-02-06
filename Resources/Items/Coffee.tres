@@ -1,11 +1,11 @@
 [gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://AntidoteStats.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Resources/AntidoteStats.gd" type="Script" id=1]
 
 [resource]
 script = ExtResource( 1 )
 name = "Cup of Coffee"
-description = "A cup of coffee. You'll be up for weeks after drinking this. Cures Drowsy."
+description = "A cup of coffee. You'll be up for weeks after drinking this."
 status = 6
 statusName = "drowsiness"
 spritePath = "res://Sprites/Coffee_Find.png"

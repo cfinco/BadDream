@@ -12,95 +12,106 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "AntidoteStats",
 "language": "GDScript",
-"path": "res://AntidoteStats.gd"
+"path": "res://Scripts/Resources/AntidoteStats.gd"
+}, {
+"base": "Resource",
+"class": "Bleed",
+"language": "GDScript",
+"path": "res://Scripts/StatusEffects/Bleed.gd"
 }, {
 "base": "Resource",
 "class": "Confusion",
 "language": "GDScript",
-"path": "res://Confusion.gd"
+"path": "res://Scripts/StatusEffects/Confusion.gd"
 }, {
 "base": "Item",
 "class": "DecoyDoll",
 "language": "GDScript",
-"path": "res://DecoyDoll.gd"
+"path": "res://Scripts/Items/DecoyDoll.gd"
 }, {
 "base": "Item",
 "class": "DreamJournal",
 "language": "GDScript",
-"path": "res://DreamJournal.gd"
+"path": "res://Scripts/Items/DreamJournal.gd"
 }, {
 "base": "Resource",
 "class": "Drowsy",
 "language": "GDScript",
-"path": "res://Drowsy.gd"
+"path": "res://Scripts/StatusEffects/Drowsy.gd"
 }, {
 "base": "Position2D",
 "class": "Item",
 "language": "GDScript",
-"path": "res://Item.gd"
+"path": "res://Scripts/Items/Item.gd"
 }, {
 "base": "Item",
 "class": "Mimic",
 "language": "GDScript",
-"path": "res://Mimic.gd"
+"path": "res://Scripts/Items/Mimic.gd"
 }, {
 "base": "Resource",
 "class": "MimicStats",
 "language": "GDScript",
-"path": "res://MimicStats.gd"
+"path": "res://Scripts/Resources/MimicStats.gd"
 }, {
 "base": "Resource",
 "class": "MonsterStats",
 "language": "GDScript",
-"path": "res://MonsterStats.gd"
+"path": "res://Scripts/Resources/MonsterStats.gd"
 }, {
 "base": "Item",
 "class": "NightLight",
 "language": "GDScript",
-"path": "res://NightLight.gd"
+"path": "res://Scripts/Items/NightLight.gd"
 }, {
 "base": "Resource",
 "class": "Poison",
 "language": "GDScript",
-"path": "res://Poison.gd"
+"path": "res://Scripts/StatusEffects/Poison.gd"
 }, {
 "base": "Item",
 "class": "Potion",
 "language": "GDScript",
-"path": "res://Potion.gd"
+"path": "res://Scripts/Items/Potion.gd"
 }, {
 "base": "Resource",
 "class": "PotionStats",
 "language": "GDScript",
-"path": "res://PotionStats.gd"
+"path": "res://Scripts/Resources/PotionStats.gd"
 }, {
 "base": "Resource",
 "class": "SleepParalysis",
 "language": "GDScript",
-"path": "res://SleepParalysis.gd"
+"path": "res://Scripts/StatusEffects/SleepParalysis.gd"
+}, {
+"base": "Resource",
+"class": "Static",
+"language": "GDScript",
+"path": "res://Scripts/StatusEffects/Static.gd"
 }, {
 "base": "Item",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://Weapon.gd"
+"path": "res://Scripts/Items/Weapon.gd"
 }, {
 "base": "Resource",
 "class": "WeaponStats",
 "language": "GDScript",
-"path": "res://WeaponStats.gd"
+"path": "res://Scripts/Resources/WeaponStats.gd"
 }, {
 "base": "Resource",
 "class": "itemStats",
 "language": "GDScript",
-"path": "res://ItemStats.gd"
+"path": "res://Scripts/Resources/ItemStats.gd"
 }, {
 "base": "Resource",
 "class": "monsterFormation",
 "language": "GDScript",
-"path": "res://MonsterChildren.gd"
+"path": "res://Scripts/Monsters/MonsterChildren.gd"
 } ]
 _global_script_class_icons={
 "AntidoteStats": "",
+"Bleed": "",
 "Confusion": "",
 "DecoyDoll": "",
 "DreamJournal": "",
@@ -114,6 +125,7 @@ _global_script_class_icons={
 "Potion": "",
 "PotionStats": "",
 "SleepParalysis": "",
+"Static": "",
 "Weapon": "",
 "WeaponStats": "",
 "itemStats": "",
@@ -123,12 +135,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Bad Dream"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://Scenes/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Game="*res://Game.gd"
+Game="*res://Scripts/Game.gd"
 
 [debug]
 

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Fairy Teeth"
+description = "They come in the night to steal your teeth! They don't even pay you!"
+monster_class = "Swarm"
+weakness = "Dark"
+hp = 25
+atk = 5
+spd = 40
+effectChance = 0
+xpAward = 10
+mapSprite = "res://Sprites/Teeth_Map.png"
+battleSprite = "res://Sprites/Teeth_Battle.png"

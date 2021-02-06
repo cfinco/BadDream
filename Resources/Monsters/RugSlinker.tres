@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/MonsterStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Rug Slinker"
+description = "A... thing... hiding under the rug."
+monster_class = "Standard"
+weakness = "None"
+hp = 100
+atk = 15
+spd = 50
+effectChance = 0
+xpAward = 50
+mapSprite = "res://Sprites/Rug_Map.png"
+battleSprite = "res://Sprites/Rug_Battle.png"

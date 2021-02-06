@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Resources/Monsters/Screamer.tres" type="Resource" id=1]
-[ext_resource path="res://Monster.tscn" type="PackedScene" id=2]
-
-[node name="Screamer" instance=ExtResource( 2 )]
-stats = ExtResource( 1 )

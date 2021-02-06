@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/WeaponStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Mega Flashlight"
+description = "A hefty flashlight shining with the force of a million suns."
+spd_mod = 30
+atk_mod = 5
+type_mult = 4
+type = "Light"
+aoe = false
+recoil = 0
+effect = ""
+spritePath = "res://Sprites/High_Find.png"
+mapSpritePath = "res://Sprites/Flashlight_Map.png"

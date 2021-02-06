@@ -1,11 +1,11 @@
 [gd_resource type="Resource" load_steps=2 format=2]
 
-[ext_resource path="res://MimicStats.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Resources/MimicStats.gd" type="Script" id=1]
 
 [resource]
 script = ExtResource( 1 )
 name = "Glass of Milk"
 description = "An ordinary glass of milk. It smells rotten."
-monsterPath = "res://RancidMilk.tscn"
+monsterPath = "res://Scenes/Monsters/Mimics/RancidMilk.tscn"
 spritePath = "res://Sprites/Spoil_Find.png"
 mapSpritePath = "res://Sprites/Milk_Map.png"

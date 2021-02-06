@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Resources/Items/Coffee.tres" type="Resource" id=1]
-[ext_resource path="res://Antidote.tscn" type="PackedScene" id=2]
-
-[node name="Coffee" instance=ExtResource( 2 )]
-stats = ExtResource( 1 )

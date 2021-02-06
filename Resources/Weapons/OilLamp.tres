@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/WeaponStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Oil Lamp"
+description = "An old oil lamp. Luckily the oil is included."
+spd_mod = 40
+atk_mod = 5
+type_mult = 2
+type = "Fire"
+aoe = true
+recoil = 0
+effect = ""
+spritePath = "res://Sprites/Oil_Find.png"
+mapSpritePath = "res://Sprites/Oil_Map.png"

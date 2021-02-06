@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/AntidoteStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Dryer Sheet"
+description = "A sheet of a mysterious material that banishes static electricity."
+status = 4
+statusName = "Static"
+spritePath = "res://Sprites/Sheet_Find.png"
+mapSpritePath = "res://Sprites/Sheet_Map.png"
