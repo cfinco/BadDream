@@ -35,11 +35,11 @@ func _ready():
 	xp_to_next_lv = 5
 	level = 1
 
-func attack(target):
+func attack(target, modifier):
 	if hasWeapon() &&  weapon.get_child(0).weaponType == target.weakness:
-		target.damage(getPower() * weapon.get_child(0).typeMult)
+		target.damage(getPower() * weapon.get_child(0).typeMult * modifier)
 	else:
-		target.damage(getPower())
+		target.damage(getPower() * modifier)
 
 func damage(amount : int):
 	if temp_hp > 0:

@@ -30,6 +30,7 @@ signal health_obscured()
 signal enemy_health_changed(health, maxHealth, index)
 signal game_over()
 signal shock_trigger()
+signal flash_trigger()
 
 func _ready():
 	for m in range(Game.tileTemp.monsters.get_child_count()):
@@ -199,7 +200,7 @@ func doBattle(target):
 		dialogueBox.changeText("")
 		dialogueBox.addColorText(Game.player.player_name + " dozed off!", Color(0.7, 0.5, 1))
 	else:
-		attackMonster(target)
+		attackMonster(target, 1)
 
 	for m in monsters:
 		if m.defeated == false && m.spd <= Game.player.getSpeed():
@@ -247,7 +248,7 @@ func battleAll():
 		dialogueBox.addColorText(Game.player.player_name + " dozed off!", Color(0.7, 0.5, 1))
 	else:
 		for m in monsters:
-			attackMonster(m)
+			attackMonster(m, 1)
 
 	for m in monsters:
 		if m.defeated == false && m.spd < Game.player.spd:
@@ -281,8 +282,8 @@ func battleAll():
 	selector.visible = false
 	updateStats()
 
-func attackMonster(target):
-	Game.player.attack(target)
+func attackMonster(target, modifier):
+	Game.player.attack(target, modifier)
 	if Game.player.hasWeapon() && Game.player.weapon.get_child(0).weaponType == target.weakness && Game.player.weapon.get_child(0).weaponType != "None":
 		$EnemyStats/Animator.stop()
 		$EnemyStats/Animator.play("Crit")

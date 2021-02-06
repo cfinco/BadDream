@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 name = "Monster"
-description = "A scary monster that was hiding under the bed."
+description = "Monster that hasn't yet specialized into hiding under the bed or the stairs."
 monster_class = "Standard"
 weakness = "None"
 hp = 40

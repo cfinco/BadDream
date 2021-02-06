@@ -20,6 +20,7 @@ onready var lightPre = preload("res://Scenes/Items/MapItems/NightLight.tscn")
 onready var dollPre = preload("res://Scenes/Items/BattleItems/DecoyDoll.tscn")
 onready var journalPre = preload("res://Scenes/Items/MiscItems/DreamJournal.tscn")
 onready var repelPre = preload("res://Scenes/Items/BattleItems/Repel.tscn")
+onready var bulbPre = preload("res://Scenes/Items/BattleItems/FlashBulb.tscn")
 
 onready var flashPre = preload("res://Scenes/Items/Weapons/Flashlight.tscn")
 onready var darkPre = preload("res://Scenes/Items/Weapons/BlackLight.tscn")
@@ -334,9 +335,9 @@ func generateItems():
 		items.append(dreamPre)
 	for i in range(2):
 		items.append(sweetPre)
-	for i in range(5):
+	for i in range(8):
 		items.append(syrupPre)
-	for i in range(5):
+	for i in range(8):
 		items.append(incensePre)
 	for i in range(5):
 		items.append(coffeePre)
@@ -360,6 +361,8 @@ func generateItems():
 		items.append(dollMimicPre)
 	for i in range(4):
 		items.append(repelPre)
+	for i in range(3):
+		items.append(bulbPre)
 
 func generateWeapons():
 	for i in range(5):

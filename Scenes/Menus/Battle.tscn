@@ -597,10 +597,11 @@ __meta__ = {
 wait_time = 2.0
 
 [node name="ShockEffect" parent="." instance=ExtResource( 13 )]
+[connection signal="enemy_health_changed" from="." to="EnemyStats/HealthBars/Health2" method="_on_Battle_enemy_health_changed"]
 [connection signal="enemy_health_changed" from="." to="EnemyStats/HealthBars/Health" method="_on_Battle_enemy_health_changed"]
 [connection signal="enemy_health_changed" from="." to="EnemyStats/HealthBars/Health3" method="_on_Battle_enemy_health_changed"]
-[connection signal="enemy_health_changed" from="." to="EnemyStats/HealthBars/Health2" method="_on_Battle_enemy_health_changed"]
 [connection signal="enemy_health_changed" from="." to="EnemyStats/HealthBars/Health4" method="_on_Battle_enemy_health_changed"]
+[connection signal="flash_trigger" from="." to="ShockEffect" method="_on_Battle_flash_trigger"]
 [connection signal="game_over" from="." to="." method="_on_game_over"]
 [connection signal="health_changed" from="." to="PlayerStats/Health" method="_on_Battle_health_changed"]
 [connection signal="health_obscured" from="." to="PlayerStats/Health" method="_on_Battle_health_obscured"]

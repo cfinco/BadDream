@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lamp_Map.png-a0c5f0b3bceae12c10865a75b907c8da.stex"
+path="res://.import/Bulb_Map.png-649b17dd70c14afb7d9cccff57f1318b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Lamp_Map.png"
-dest_files=[ "res://.import/Lamp_Map.png-a0c5f0b3bceae12c10865a75b907c8da.stex" ]
+source_file="res://Sprites/Bulb_Map.png"
+dest_files=[ "res://.import/Bulb_Map.png-649b17dd70c14afb7d9cccff57f1318b.stex" ]
 
 [params]
 

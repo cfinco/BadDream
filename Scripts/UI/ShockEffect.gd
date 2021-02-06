@@ -11,3 +11,6 @@ func _on_Map_shock_trigger():
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	$AnimationPlayer.play("Idle")
+
+func _on_Battle_flash_trigger():
+	$AnimationPlayer.play("Flash")

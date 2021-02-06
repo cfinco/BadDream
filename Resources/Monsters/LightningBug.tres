@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 name = "Lightning Bug"
-description = "A dark and stormy fly."
+description = "It's a dark and stormy gnat."
 monster_class = "Standard"
 weakness = "Fire"
 hp = 30
