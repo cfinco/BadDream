@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/AntidoteStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Glass of Water"
+description = "3AM water. Objectively the most perfect beverage."
+status = 7
+statusName = "all status conditions"
+spritePath = "res://Sprites/Water_Find.png"
+mapSpritePath = "res://Sprites/Milk_Map.png"

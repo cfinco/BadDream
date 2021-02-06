@@ -21,7 +21,8 @@ var status = {
 	"Paralysis" : 3,
 	"Static" : 4,
 	"Bleed" : 5,
-	"Drowsy" : 6
+	"Drowsy" : 6,
+	"All" : 7
 }
 
 func _input(event):

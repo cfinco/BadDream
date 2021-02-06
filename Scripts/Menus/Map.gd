@@ -14,6 +14,7 @@ onready var incensePre = preload("res://Scenes/Items/Antidotes/Incense.tscn")
 onready var coffeePre = preload("res://Scenes/Items/Antidotes/Coffee.tscn")
 onready var sheetPre = preload("res://Scenes/Items/Antidotes/DryerSheet.tscn")
 onready var bandagePre = preload("res://Scenes/Items/Antidotes/Bandage.tscn")
+onready var waterPre = preload("res://Scenes/Items/Antidotes/Water.tscn")
 
 onready var lightPre = preload("res://Scenes/Items/MapItems/NightLight.tscn")
 onready var dollPre = preload("res://Scenes/Items/BattleItems/DecoyDoll.tscn")
@@ -138,7 +139,7 @@ func _input(event):
 			Game.player.move(Vector2(-1, 0), 1)
 			checkTile()
 		elif event.is_action_pressed("ui_use") && Game.player.hasItem():
-			if Game.player.inv.get_child(0).type != "Antidote" && Game.player.inv.get_child(0).type != "Battle" || Game.player.inv.get_child(0).type == "Antidote" && Game.player.inv.get_child(0).status == Game.player.status:
+			if Game.player.inv.get_child(0).type != "Antidote" && Game.player.inv.get_child(0).type != "Battle" || Game.player.inv.get_child(0).type == "Antidote" && Game.player.inv.get_child(0).status == Game.player.status || Game.player.inv.get_child(0).type == "Antidote" && Game.player.inv.get_child(0).status == Game.status.All:
 				if Game.player.inv.get_child(0).type != "Potion" && Game.player.inv.get_child(0).type != "Antidote":
 					checkStatic()
 				Game.player.inv.get_child(0).use(Game.player)
@@ -342,6 +343,8 @@ func generateItems():
 		items.append(sheetPre)
 	for i in range(5):
 		items.append(bandagePre)
+	for i in range(2):
+		items.append(waterPre)
 	for i in range(4):
 		items.append(lightPre)
 	for i in range(10):
@@ -403,7 +406,7 @@ func generateMonsters():
 		monsters.append(closetPre)
 	for i in range(3):
 		monsters.append(teethPre)
-	for i in range(3):
+	for i in range(2):
 		monsters.append(dustPre)
 	for i in range(3):
 		monsters.append(lightningPre)

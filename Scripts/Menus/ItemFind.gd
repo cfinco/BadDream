@@ -26,7 +26,7 @@ func _ready():
 			buttons[1].disabled = true
 		"Antidote":
 			buttons[1].changeText("Use it")
-			if item.status != Game.player.status:
+			if item.status != Game.player.status && item.status != Game.status.All:
 				buttons[1].disabled = true
 		"Battle":
 			buttons[1].changeText("Use it")

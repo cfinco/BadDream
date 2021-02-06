@@ -457,7 +457,7 @@ func selectFoe(direction):
 func useItem(index):
 	match Game.player.inv.get_child(index).type:
 		"Antidote":
-			if Game.player.inv.get_child(itemIndex).status == Game.player.status:
+			if Game.player.inv.get_child(itemIndex).status == Game.player.status || Game.player.inv.get_child(itemIndex).status == Game.status.All:
 				for b in buttons:
 					b.visible = false
 				dialogueBox.changeText(Game.player.player_name + " used the " + Game.player.inv.get_child(index).itemName + ".\n" + Game.player.player_name + " was cured of the " + Game.player.inv.get_child(index).statusName + ".")
