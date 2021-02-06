@@ -19,6 +19,7 @@ onready var waterPre = preload("res://Scenes/Items/Antidotes/Water.tscn")
 onready var lightPre = preload("res://Scenes/Items/MapItems/NightLight.tscn")
 onready var dollPre = preload("res://Scenes/Items/BattleItems/DecoyDoll.tscn")
 onready var journalPre = preload("res://Scenes/Items/MiscItems/DreamJournal.tscn")
+onready var repelPre = preload("res://Scenes/Items/BattleItems/Repel.tscn")
 
 onready var flashPre = preload("res://Scenes/Items/Weapons/Flashlight.tscn")
 onready var darkPre = preload("res://Scenes/Items/Weapons/BlackLight.tscn")
@@ -357,6 +358,8 @@ func generateItems():
 		items.append(warmMilkMimicPre)
 	for i in range(1):
 		items.append(dollMimicPre)
+	for i in range(4):
+		items.append(repelPre)
 
 func generateWeapons():
 	for i in range(5):
@@ -417,3 +420,14 @@ func _on_Map_game_over():
 
 func shockTrigger():
 	emit_signal("shock_trigger")
+
+func clearMonsters(target):
+	for row in map:
+		for tile in row:
+			if tile.hasMonster():
+				for m in range(tile.monsters.get_child_count()):
+					if tile.monsters.get_child(m).monster_name == target.monster_name:
+						var mon = tile.monsters.get_child(m)
+						tile.monsters.remove_child(mon)
+						if tile.discovered:
+							tile.discover()
