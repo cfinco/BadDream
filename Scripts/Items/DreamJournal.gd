@@ -7,7 +7,7 @@ var description : String
 
 func _ready():
 	itemName = "Dream Journal"
-	description = "An ancient tome chronicling your wildest desires and darkest secrets... \nand also your 'naked at school' dreams. Increases your level by 1."
+	description = "An ancient tome chronicling the wild adventures that take place in your mind... \nand also your 'naked at school' dreams. Increases your level by 1."
 	spritePath = load("res://Sprites/Book_Find.png")
 	mapSpritePath = load("res://Sprites/Book_Map.png")
 	type = "Booster"

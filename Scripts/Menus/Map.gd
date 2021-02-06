@@ -402,7 +402,7 @@ func generateMonsters():
 		monsters.append(teethPre)
 	for i in range(3):
 		monsters.append(dustPre)
-	for i in range(300):
+	for i in range(3):
 		monsters.append(lightningPre)
 
 func _on_Map_game_over():
