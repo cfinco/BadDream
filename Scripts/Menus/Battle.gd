@@ -79,6 +79,12 @@ func _process(delta):
 				b.visible = false
 				b.color = Color(0.2, 0.2, 0.2)
 		selectedButton.color = Color(0.9, 0.8, 0)
+	var clear = true
+	for m in monsters:
+		if m != null:
+			clear = false
+	if clear == true:
+		monsters = []
 
 func _input(event):
 	if dialogueBox.textScrolled():
@@ -510,6 +516,19 @@ func useItem(index):
 			for b in buttons:
 				b.visible = false
 			dialogueBox.changeText(Game.player.player_name + " used the " + Game.player.inv.get_child(index).itemName)
+			Game.player.inv.get_child(index).use(Game.player)
+			inv[0].texture = null
+			inv[1].texture = null
+			inv[0].value.text = ""
+			inv[1].value.text = ""
+			buttonIndex = 2
+			selectedButton = buttons[2]
+			selector.visible = false
+		"Gear":
+			checkStatic()
+			for b in buttons:
+				b.visible = false
+			dialogueBox.changeText(Game.player.player_name + " equipped the " + Game.player.inv.get_child(index).itemName)
 			Game.player.inv.get_child(index).use(Game.player)
 			inv[0].texture = null
 			inv[1].texture = null

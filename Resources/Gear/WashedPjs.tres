@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/GearStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Washed Pajamas"
+description = "A set of pajamas emitting an aura of clean. Reduces damage taken by 20%. Grants immunity to Poison."
+armorValue = 0.2
+status = 1
+statusName = "Poison"
+spritePath = "res://Sprites/PjsWashed_Find.png"
+mapSpritePath = "res://Sprites/Pajamas_Map.png"
+gearType = "Immunity"

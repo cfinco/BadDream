@@ -4,11 +4,13 @@ onready var buttons = $Buttons.get_children()
 onready var dialogueBox = $DialogueBox/RichTextLabel
 onready var inv = $Inv.get_children()
 onready var selector = $Selector
+onready var gameOverPre = preload("res://Scenes/Menus/GameOver.tscn")
 var selectedButton
 var selectedItem
 var buttonIndex = 0
 var itemIndex
 var item
+signal game_over()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +18,10 @@ func _ready():
 	$Sprite.texture = Game.tileTemp.loot.spritePath
 	
 	selectedButton = buttons[0]
-	dialogueBox.changeText("You found a " + item.itemName + "!")
+	if item.type == "Gear":
+		dialogueBox.changeText("You found some " +  item.itemName + "!")
+	else:
+		dialogueBox.changeText("You found a " + item.itemName + "!")
 	buttons[2].changeText("Pocket it")
 	match item.type:
 		"Weapon":
@@ -37,6 +42,8 @@ func _ready():
 			buttons[1].changeText("Use it")
 		"Potion":
 			buttons[1].changeText("Use it")
+		"Gear":
+			buttons[1].changeText("Equip it")
 
 func _process(delta):
 	if dialogueBox.textScrolled() && buttonIndex >= 0:
@@ -117,8 +124,17 @@ func _input(event):
 								dialogueBox.changeText(item.description)
 							"Mimic":
 								dialogueBox.changeText(item.description)
+							"Gear":
+								dialogueBox.changeText(item.description)
+								if Game.player.hasGear():
+									$Weapon.texture = Game.player.gear.get_child(0).spritePath
+									$Weapon.value.text = "Def: " + String((Game.player.gear.get_child(0).armorValue) * 100)
+								for i in Game.player.inv.get_children():
+									if i.type == "Gear":
+										inv[i.get_index()].texture = i.spritePath
+										inv[i.get_index()].value.text = "Def: " + String((i.armorValue) * 100)
 				1:
-					if item.type != "Potion" || item.type != "Antidote":
+					if item.type != "Potion" && item.type != "Antidote":
 						checkStatic()
 					useItem()
 				2:
@@ -181,11 +197,11 @@ func useItem():
 		if newItem != null:
 			Game.tileTemp.add_child(newItem)
 	else:
+		Game.inMenu = false
 		newItem = loot.use(Game.player)
 		Game.tileTemp.loot = newItem
 		if newItem != null:
 			Game.tileTemp.add_child(newItem)
-		Game.inMenu = false
 	
 	Game.tileTemp.discover()
 	queue_free()
@@ -210,3 +226,8 @@ func checkStatic():
 			emit_signal("game_over")
 			queue_free()
 		Game.player.status = Game.status.None
+
+func _on_ItemFind_game_over():
+	var popup = gameOverPre.instance()
+	get_parent().add_child(popup)
+

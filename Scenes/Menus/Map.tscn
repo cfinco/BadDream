@@ -33,11 +33,17 @@ scale = Vector2( 1, 0.25 )
 texture = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="Inventory"]
+position = Vector2( 0, -40 )
 scale = Vector2( 1, 0.25 )
 texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="Inventory"]
-position = Vector2( 0, 280 )
+position = Vector2( 0, 240 )
+scale = Vector2( 1, 0.25 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="Inventory"]
+position = Vector2( 0, 520 )
 scale = Vector2( 1, 0.25 )
 texture = ExtResource( 2 )
 
@@ -45,16 +51,21 @@ texture = ExtResource( 2 )
 position = Vector2( 0, -280 )
 scale = Vector2( 1, 0.25 )
 
+[node name="Gear" type="Sprite" parent="Inventory"]
+position = Vector2( 0, -40 )
+scale = Vector2( 1, 0.25 )
+
 [node name="Item" type="Sprite" parent="Inventory"]
+position = Vector2( 0, 240 )
 scale = Vector2( 1, 0.25 )
 
 [node name="Item2" type="Sprite" parent="Inventory"]
-position = Vector2( 0, 280 )
+position = Vector2( 0, 530 )
 scale = Vector2( 1, 0.25 )
 
 [node name="Key" type="Sprite" parent="Inventory"]
 visible = false
-position = Vector2( 0, 560 )
+position = Vector2( 0, 800 )
 scale = Vector2( 1, 0.25 )
 texture = ExtResource( 8 )
 
@@ -129,6 +140,33 @@ margin_bottom = 175.0
 rect_scale = Vector2( 0.8, 0.8 )
 custom_fonts/font = ExtResource( 7 )
 text = "-30"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GearLabel" type="Label" parent="ColorRect3"]
+margin_left = 101.0
+margin_top = 160.0
+margin_right = 197.0
+margin_bottom = 204.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 7 )
+text = "Def"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GearValue" type="Label" parent="ColorRect3"]
+modulate = Color( 0.45098, 0.745098, 0.329412, 1 )
+margin_left = 101.0
+margin_top = 195.0
+margin_right = 197.0
+margin_bottom = 239.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = ExtResource( 7 )
+text = "20%"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -279,5 +317,6 @@ __meta__ = {
 }
 
 [node name="ShockEffect" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1.05951, 12.7136 )
 [connection signal="game_over" from="." to="." method="_on_Map_game_over"]
 [connection signal="shock_trigger" from="." to="ShockEffect" method="_on_Map_shock_trigger"]

@@ -569,7 +569,7 @@ __meta__ = {
 }
 
 [node name="Inv2" type="Sprite" parent="Inv"]
-position = Vector2( 384, 640 )
+position = Vector2( 420, 640 )
 scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 9 )
 
@@ -597,8 +597,8 @@ __meta__ = {
 wait_time = 2.0
 
 [node name="ShockEffect" parent="." instance=ExtResource( 13 )]
-[connection signal="enemy_health_changed" from="." to="EnemyStats/HealthBars/Health2" method="_on_Battle_enemy_health_changed"]
 [connection signal="enemy_health_changed" from="." to="EnemyStats/HealthBars/Health" method="_on_Battle_enemy_health_changed"]
+[connection signal="enemy_health_changed" from="." to="EnemyStats/HealthBars/Health2" method="_on_Battle_enemy_health_changed"]
 [connection signal="enemy_health_changed" from="." to="EnemyStats/HealthBars/Health3" method="_on_Battle_enemy_health_changed"]
 [connection signal="enemy_health_changed" from="." to="EnemyStats/HealthBars/Health4" method="_on_Battle_enemy_health_changed"]
 [connection signal="flash_trigger" from="." to="ShockEffect" method="_on_Battle_flash_trigger"]

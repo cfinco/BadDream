@@ -14,3 +14,5 @@ texture = ExtResource( 2 )
 [node name="Inventory" type="Node2D" parent="."]
 
 [node name="Weapon" type="Node2D" parent="."]
+
+[node name="Gear" type="Node2D" parent="."]

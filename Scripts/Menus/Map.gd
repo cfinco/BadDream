@@ -21,6 +21,7 @@ onready var dollPre = preload("res://Scenes/Items/BattleItems/DecoyDoll.tscn")
 onready var journalPre = preload("res://Scenes/Items/MiscItems/DreamJournal.tscn")
 onready var repelPre = preload("res://Scenes/Items/BattleItems/Repel.tscn")
 onready var bulbPre = preload("res://Scenes/Items/BattleItems/FlashBulb.tscn")
+onready var crayonPre = preload("res://Scenes/Items/MapItems/Crayons.tscn")
 
 onready var flashPre = preload("res://Scenes/Items/Weapons/Flashlight.tscn")
 onready var darkPre = preload("res://Scenes/Items/Weapons/BlackLight.tscn")
@@ -32,6 +33,15 @@ onready var gunPre = preload("res://Scenes/Items/Weapons/NyarfGun.tscn")
 onready var lampPre = preload("res://Scenes/Items/Weapons/Lamp.tscn")
 onready var lavaPre = preload("res://Scenes/Items/Weapons/LavaLamp.tscn")
 onready var oilPre = preload("res://Scenes/Items/Weapons/OilLamp.tscn")
+onready var pillowPre = preload("res://Scenes/Items/Weapons/Pillow.tscn")
+
+onready var pjPre = preload("res://Scenes/Items/Gear/ThickPjs.tscn")
+onready var washPre = preload("res://Scenes/Items/Gear/WashedPjs.tscn")
+onready var comfyPre = preload("res://Scenes/Items/Gear/ComfyPjs.tscn")
+onready var snugPre = preload("res://Scenes/Items/Gear/SnugPjs.tscn")
+onready var clingPre = preload("res://Scenes/Items/Gear/ClinglessPjs.tscn")
+onready var cottonPre = preload("res://Scenes/Items/Gear/CottonPjs.tscn")
+onready var itchPre = preload("res://Scenes/Items/Gear/ItchyPjs.tscn")
 
 onready var itemMenu = preload("res://Scenes/Menus/ItemFind.tscn")
 onready var battleMenu = preload("res://Scenes/Menus/Battle.tscn")
@@ -68,6 +78,7 @@ var map = []
 var items = []
 var monsters = []
 var weapons = []
+var gear = []
 
 func _ready():
 	Game.map = self
@@ -98,28 +109,34 @@ func create_map(width, height):
 	generateKey()
 	generateItems()
 	generateWeapons()
+	generateGear()
 	generateMonsters()
 	
 	for row in map:
 		for tile in row:
 			if tile.empty(): 
 				randomize()
-				var roll = randi() % 30
-				if roll <= 1:
+				var roll = randi() % 100
+				if roll <= 9:
 					var itemRoll = randi() % items.size()
 					var loot = items[itemRoll].instance()
 					tile.loot = loot
 					tile.add_child(loot)
-				elif roll <= 3:
+				elif roll <= 17:
 					var monsterRoll = randi() % monsters.size()
 					var monster = monsters[monsterRoll].instance()
 					tile.monsters.add_child(monster)
 					if monster.monster_class == "Swarm":
 						tile.monsters.add_child(monster.copy())
 						tile.monsters.add_child(monster.copy())
-				elif roll <= 4:
+				elif roll <= 20:
 					var itemRoll = randi() % weapons.size()
 					var loot = weapons[itemRoll].instance()
+					tile.loot = loot
+					tile.add_child(loot)
+				elif roll <= 21:
+					var gearRoll = randi() % gear.size()
+					var loot = gear[gearRoll].instance()
 					tile.loot = loot
 					tile.add_child(loot)
 
@@ -149,7 +166,7 @@ func _input(event):
 			if Game.player.inv.get_child(1).type != "Antidote" && Game.player.inv.get_child(1).type != "Battle" || Game.player.inv.get_child(1).type == "Antidote" && Game.player.inv.get_child(1).status == Game.player.status:
 				if Game.player.inv.get_child(1).type != "Potion" && Game.player.inv.get_child(1).type != "Antidote":
 					checkStatic()
-				Game.player.inv.get_child(1).use(Game.player)
+				Game.player.inv.get_child(0).use(Game.player)
 		updateStats()
 		checkLight()
 
@@ -208,7 +225,7 @@ func checkTile():
 	
 
 func updateStats():
-	if Game.inMenu == false:
+	if Game.inMenu == false || Game.usingCrayons:
 		$Stats/Name.text = Game.player.player_name + " the " + Game.player.title
 		$Stats/LvLabel.text = "Lv. " + String(Game.player.level)
 		$Stats/HpLabel.text = "Hp:" 
@@ -246,6 +263,16 @@ func updateStats():
 			$ColorRect3/WSpdLabel.text = ""
 			$ColorRect3/WSpd.text = ""
 		$FloorLabel.text = "Floor: " + String(Game.level)
+		
+		if Game.player.hasGear():
+			var g = Game.player.gear.get_child(0)
+			$Inventory/Gear.texture = g.spritePath
+			$ColorRect3/GearLabel.text = "Def"
+			$ColorRect3/GearValue.text = String(Game.player.gear.get_child(0).armorValue * 100) + "%"
+		else:
+			$Inventory/Gear.texture = null
+			$ColorRect3/GearLabel.text = ""
+			$ColorRect3/GearValue.text = ""
 		
 		if Game.player.hasItem():
 			var inv1 = Game.player.inv.get_child(0)
@@ -300,6 +327,8 @@ func updateStats():
 		$ColorRect3/WAtk.text = ""
 		$ColorRect3/WSpdLabel.text = ""
 		$ColorRect3/WSpd.text = ""
+		$ColorRect3/GearLabel.text = ""
+		$ColorRect3/GearValue.text = ""
 		$FloorLabel.text = ""
 		$Stats/Status.text = ""
 
@@ -363,28 +392,32 @@ func generateItems():
 		items.append(repelPre)
 	for i in range(3):
 		items.append(bulbPre)
+	for i in range(4000):
+		items.append(crayonPre)
 
 func generateWeapons():
-	for i in range(5):
+	for i in range(2):
 		weapons.append(flashPre)
-	for i in range(5):
+	for i in range(2):
 		weapons.append(darkPre)
-	for i in range(5):
+	for i in range(2):
 		weapons.append(candlePre)
-	for i in range(5):
+	for i in range(2):
 		weapons.append(megaflashPre)
-	for i in range(5):
+	for i in range(2):
 		weapons.append(laserPre)
-	for i in range(5):
+	for i in range(2):
 		weapons.append(lighterPre)
-	for i in range(5):
+	for i in range(2):
 		weapons.append(gunPre)
-	for i in range(5):
+	for i in range(2):
 		weapons.append(lampPre)
-	for i in range(5):
+	for i in range(2):
 		weapons.append(lavaPre)
-	for i in range(5):
+	for i in range(2):
 		weapons.append(oilPre)
+	for i in range(2):
+		weapons.append(pillowPre)
 
 func generateMonsters():
 	monsters = []
@@ -417,6 +450,23 @@ func generateMonsters():
 	for i in range(3):
 		monsters.append(lightningPre)
 
+func generateGear():
+	gear = []
+	for i in range(2):
+		gear.append(pjPre)
+	for i in range(2):
+		gear.append(washPre)
+	for i in range(2):
+		gear.append(comfyPre)
+	for i in range(2):
+		gear.append(snugPre)
+	for i in range(2):
+		gear.append(clingPre)
+	for i in range(2):
+		gear.append(cottonPre)
+	for i in range(2):
+		gear.append(itchPre)
+
 func _on_Map_game_over():
 	var popup = gameOverPre.instance()
 	get_parent().add_child(popup)
@@ -425,12 +475,33 @@ func shockTrigger():
 	emit_signal("shock_trigger")
 
 func clearMonsters(target):
+	
 	for row in map:
 		for tile in row:
 			if tile.hasMonster():
-				for m in range(tile.monsters.get_child_count()):
-					if tile.monsters.get_child(m).monster_name == target.monster_name:
-						var mon = tile.monsters.get_child(m)
-						tile.monsters.remove_child(mon)
-						if tile.discovered:
-							tile.discover()
+				for m in tile.monsters.get_children():
+					if m.monster_name == target.monster_name:
+						tile.monsters.remove_child(m)
+						m.queue_free()
+				if tile.discovered:
+					tile.discover()
+
+func markItems():
+	for row in map:
+		for tile in row:
+			if tile.hasLoot() && !tile.discovered && tile.loot.type != "Key":
+				tile.sprite.texture = load("res://Sprites/Item_Mark.png")
+
+func markMonsters():
+	for row in map:
+		for tile in row:
+			if tile.hasMonster() && !tile.discovered:
+				tile.sprite.texture = load("res://Sprites/Monster_Mark.png")
+				
+func markExit():
+	for row in map:
+		for tile in row:
+			if tile.hasLoot() && !tile.discovered && tile.loot.type == "Key":
+				tile.sprite.texture = load("res://Sprites/Key_Mark.png")
+			elif tile.door && !tile.discovered:
+				tile.sprite.texture = load("res://Sprites/Door_Mark.png")

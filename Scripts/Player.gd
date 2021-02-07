@@ -2,6 +2,7 @@ extends Position2D
 
 onready var inv = $Inventory
 onready var weapon = $Weapon
+onready var gear = $Gear
 onready var battleSprite = preload("res://Sprites/Player_Battle.png")
 
 var player_name : String = "Kiddo"
@@ -122,6 +123,12 @@ func hasItem():
 
 func hasWeapon():
 	if weapon.get_child_count() > 0:
+		return true
+	else:
+		return false
+
+func hasGear():
+	if gear.get_child_count() > 0:
 		return true
 	else:
 		return false

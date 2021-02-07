@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/GearStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Cotton Pajamas"
+description = "A set of pajamas that could probably absorb a lot of blood if needed. Reduces damage taken by 20%. Grants immunity to Bleed."
+armorValue = 0.2
+status = 0
+statusName = "Bleed"
+spritePath = "res://Sprites/PjsCotton_Find.png"
+mapSpritePath = "res://Sprites/Pajamas_Map.png"
+gearType = "Immunity"

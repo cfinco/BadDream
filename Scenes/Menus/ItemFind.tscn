@@ -87,3 +87,4 @@ __meta__ = {
 }
 
 [node name="Selector" parent="." instance=ExtResource( 2 )]
+[connection signal="game_over" from="." to="." method="_on_ItemFind_game_over"]

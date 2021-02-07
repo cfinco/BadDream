@@ -5,6 +5,7 @@ var map
 var level = 1
 var tileTemp
 var inMenu = false
+var usingCrayons = false
 var illuminated = false
 
 var types = {

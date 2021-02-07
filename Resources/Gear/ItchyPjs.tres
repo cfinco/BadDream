@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/GearStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Itchy Pajamas"
+description = "A set of wool pajamas so itchy it prevents you from falling asleep. Reduces damage taken by 20%. Grants immunity to Drowsy."
+armorValue = 0.2
+status = 6
+statusName = "Drowsy"
+spritePath = "res://Sprites/PjsItchy_Find.png"
+mapSpritePath = "res://Sprites/Pajamas_Map.png"
+gearType = "Immunity"

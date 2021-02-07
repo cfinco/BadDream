@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Resources/GearStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Thick Pajamas"
+description = "A set of pajamas equivalent to wearing 5 layers of clothing. Reduces damage taken by 40%."
+armorValue = 0.4
+status = 0
+statusName = ""
+spritePath = "res://Sprites/Pajamas_Find.png"
+mapSpritePath = "res://Sprites/Pajamas_Map.png"
+gearType = "Standard"

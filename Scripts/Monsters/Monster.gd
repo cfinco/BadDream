@@ -58,7 +58,10 @@ func _ready():
 	$Sprite.texture = battleSprite
 
 func attack(target, spare):
-	target.damage(atk)
+	if target.hasGear():
+		target.damage(atk - (atk * target.gear.get_child(0).armorValue))
+	else:
+		target.damage(atk)
 	if spare:
 		if target.hp <= 0:
 			target.hp = 1
